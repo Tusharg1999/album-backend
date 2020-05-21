@@ -2,8 +2,8 @@ const joi = require("@hapi/joi");
 
 function validator(body) {
     const joiSchema = joi.object({
-        email: joi.required().min(5).email().string(),
-        password: joi.required().min(6).pattern(new RegExp('^[a-zA-Z0-9]{3,30}$'))
+        username: joi.string().min(5).required(),
+        password: joi.string().min(6).pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')).required()
     })
     return joiSchema.validate(body);
 }

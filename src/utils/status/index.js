@@ -11,6 +11,14 @@ const httpStatus = {
         status: 202,
         text: "Accepted"
     },
+    invalid: {
+        status: 401,
+        text: "Invalid"
+    },
+    notFound: {
+        status: 404,
+        text: "Not Found"
+    },
     conflict: {
         status: 406,
         text: "User Already Exist with same email or username"

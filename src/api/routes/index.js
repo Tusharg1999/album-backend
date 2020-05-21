@@ -1,9 +1,11 @@
 const express = require("express");
 
-const registerRoutes = require("./auth/register")
+const RegisterRoutes = require("./auth/register");
+const LoginRoutes = require("./auth/login");
 
 const router = express.Router();
 
-router.use("/register", registerRoutes)
+router.use("/register", RegisterRoutes);
+router.use("/login", LoginRoutes);
 
 module.exports = router;

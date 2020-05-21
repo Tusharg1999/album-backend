@@ -10,6 +10,10 @@ const httpStatus = {
     validationError: {
         status: 422,
         text: "some validationError"
+    },
+    conflict: {
+        status: 406,
+        text: "User Already Exist with same email or username"
     }
 }
 module.exports = httpStatus;

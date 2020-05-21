@@ -9,5 +9,8 @@
   "editor.letterSpacing": 0.8,
   // Enable smooth scrolling in the editor
   "editor.smoothScrolling": true,
-  "editor.quickSuggestions": true
+  "editor.quickSuggestions": true,
+  "cSpell.words": [
+    "alphanum"
+  ]
 }

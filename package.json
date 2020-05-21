@@ -2,7 +2,7 @@
   "name": "album-backend",
   "version": "1.0.0",
   "description": "Backend for album app",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "dev": "nodemon"
   },
@@ -11,7 +11,11 @@
   "dependencies": {
     "@hapi/joi": "^17.1.1",
     "bcryptjs": "^2.4.3",
-    "express": "^4.17.1"
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^3.22.0",
+    "mongoose": "^5.9.14"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"

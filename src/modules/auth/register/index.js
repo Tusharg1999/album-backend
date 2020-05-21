@@ -1,8 +1,10 @@
+const bcrypt = require("bcryptjs")
+
+
 const validator = require("./validation/index");
 const httpStatus = require("../../../utils/status");
 const { debugLog } = require("../../../utils/logger");
 const User = require("../../../schema/user");
-const bcrypt = require("bcryptjs")
 
 const register = async function (req, res) {
     const { error } = validator(req.body);
@@ -11,7 +13,7 @@ const register = async function (req, res) {
     if (await usernameExist(req.body) || await userEmailExist(req.body))
         res.status(httpStatus.conflict.status).send(httpStatus.conflict.text);
     await createUser(req.body)
-    res.status(httpStatus.ok.status).send(httpStatus.ok.text)
+    res.status(httpStatus.created.status).send(httpStatus.created.text)
 
 }
 

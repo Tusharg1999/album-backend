@@ -3,6 +3,7 @@ const express = require("express");
 const helmet = require("helmet");
 
 const Routes = require("../../api/routes");
+const { debugLog } = require("../../utils/logger");
 
 module.exports = async function expressLoader(app) {
     app.use(cors());

@@ -17,8 +17,20 @@ async function profile(req, res, next) {
 }
 
 async function updateProfile(req) {
+    let newProfile = {
+        ...req.body,
+    }
+    if (req.file !== undefined) {
+        imageUrl = process.env.HOSTING + process.env.PORT + "/" + req.file.filename
+        newProfile = {
+            ...newProfile,
+            imageUrl
+        }
+    }
+    debugLog(newProfile.imageUrl)
+
     debugLog("start updating")
-    await User.updateOne({ _id: req.user }, { ...req.body });
+    await User.updateOne({ _id: req.user }, { ...newProfile });
     debugLog("end updating");
 }
 

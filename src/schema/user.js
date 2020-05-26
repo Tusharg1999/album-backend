@@ -20,7 +20,7 @@ const userSchema = mongoose.Schema({
         type: String
     },
     phoneNumber: {
-        type: String,
+        type: Number,
         max: 10,
         min: 10,
     },
@@ -33,7 +33,7 @@ const userSchema = mongoose.Schema({
         unique: true,
     },
     gender: {
-        type: Number,
+        type: String,
         min: 1,
         max: 1
     },

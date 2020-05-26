@@ -10,5 +10,8 @@
   // Enable smooth scrolling in the editor
   "editor.smoothScrolling": true,
   "editor.quickSuggestions": true,
-  "cSpell.words": ["alphanum"]
+  "cSpell.words": [
+    "alphanum",
+    "originalname"
+  ]
 }

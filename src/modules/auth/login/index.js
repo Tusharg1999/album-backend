@@ -9,7 +9,7 @@ const { debugLog } = require("../../../utils/logger");
 const login = async function (req, res) {
     const { error } = validator(req.body);
     if (error) res.status(httpStatus.validationError.status).send(error.message);
-    if (userEmailExist(req.body) === false && usernameExist(req.body === false)) res.status(httpStatus.notFound.status).send("User " + httpStatus.notFound.text);
+    if (await userEmailExist(req.body) === false && await usernameExist(req.body === false)) res.status(httpStatus.notFound.status).send("User " + httpStatus.notFound.text);
     const result = await signIn(req.body);
     if (result.error === true) {
         res.status(httpStatus.invalid.status).send(httpStatus.invalid.text + " password");
@@ -29,6 +29,7 @@ async function userEmailExist({ email }) {
 
 async function signIn(body) {
     debugLog(body.username)
+    debugLog(body.password)
     const { password, salt, _id } = await User.findOne({ username: body.username });
     debugLog(password)
     const hashPassword = await bcrypt.hash(body.password, salt);

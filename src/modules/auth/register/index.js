@@ -9,7 +9,9 @@ const User = require("../../../schema/user");
 const register = async function (req, res) {
     const { error } = validator(req.body);
     if (error)
-        res.status(httpStatus.validationError.status).send(error.message);
+        res.status(httpStatus.validationError.status).send(new Error(
+            error.message
+        ));
     if (await usernameExist(req.body) || await userEmailExist(req.body))
         res.status(httpStatus.conflict.status).send(httpStatus.conflict.text);
     await createUser(req.body)

@@ -13,6 +13,7 @@ async function authorizeToken(req, res, next) {
         debugLog(decoded.payload._id);
         req.user = decoded.payload._id;
     })
+    debugLog("authorized by jwt")
     next();
 }
 module.exports = { authorizeToken };

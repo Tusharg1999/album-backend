@@ -5,6 +5,6 @@ const uploads = require("../../middlewares/fileStorage");
 
 const router = express.Router();
 
-router.post("/", [authorizeToken, uploads.single("profileImage")], profile);
+router.get("/", [authorizeToken, uploads.single("profileImage")], profile);
 
 module.exports = router;

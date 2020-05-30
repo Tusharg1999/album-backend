@@ -1,5 +1,6 @@
 const Image = require("../../schema/image");
 const User = require("../../schema/user");
+const { debugLog } = require("../../utils/logger")
 
 async function imageHandler(req, res) {
     await imageUplader(req);
@@ -21,6 +22,7 @@ async function imageUplader(req) {
     response.forEach((item) => {
         imageIds.push(item._id);
     })
+    debugLog(imageIds)
     imageAndUserBinder(imageIds, req);
 }
 async function imageAndUserBinder(imageIds, req) {

@@ -11,6 +11,7 @@ const imageSchema = mongoose.Schema({
     location: {
         type: String
     },
-    date: Date.now
 })
-const Image = mongoose.models("images", imageSchema);
+const Image = mongoose.model("images", imageSchema);
+
+module.exports = Image

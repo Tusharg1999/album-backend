@@ -22,7 +22,6 @@ async function imageUplader(req) {
     response.forEach((item) => {
         imageIds.push(item._id);
     })
-    debugLog(imageIds)
     imageAndUserBinder(imageIds, req);
 }
 async function imageAndUserBinder(imageIds, req) {

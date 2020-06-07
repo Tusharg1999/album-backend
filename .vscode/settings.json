@@ -6,8 +6,12 @@
   // Turn on font ligatures
   "editor.fontLigatures": true,
   // Set letter spacing
-  "editor.letterSpacing": 0.8,
+  "editor.letterSpacing": 1,
   // Enable smooth scrolling in the editor
   "editor.smoothScrolling": true,
-  "editor.quickSuggestions": true
+  "editor.quickSuggestions": true,
+  "cSpell.words": [
+    "alphanum",
+    "originalname"
+  ]
 }
